@@ -1,0 +1,1 @@
+docker compose -f /home/kamil/docker/homer/compose.yml up -d

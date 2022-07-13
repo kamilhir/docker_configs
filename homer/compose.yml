@@ -1,0 +1,14 @@
+services:
+  homer:
+    image: b4bz/homer:latest
+    container_name: homer
+    volumes:
+      - /home/kamil/docker/homer/appdata:/www/assets
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+

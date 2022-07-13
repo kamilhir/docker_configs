@@ -1,0 +1,15 @@
+services:
+  heimdall:
+    image: linuxserver/heimdall
+    container_name: heimdall
+    volumes:
+      - /home/kamil/docker/heimdall/appdata/:/config
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    ports:
+      - 9000:80
+      - 9001:443
+    restart: unless-stopped
+
