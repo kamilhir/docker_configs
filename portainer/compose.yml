@@ -9,6 +9,12 @@ services:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /home/kamil/docker/portainer/appdata:/data
+    networks:
+      - nginx_network
     ports:
       - 9002:9000
     restart: unless-stopped
+
+networks:
+  nginx_network:
+    external: true

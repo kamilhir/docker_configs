@@ -8,8 +8,13 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Warsaw
+    networks:
+      - nginx_network
     ports:
       - 9000:80
       - 9001:443
     restart: unless-stopped
 
+networks:
+  nginx_network:
+    external: true

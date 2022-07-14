@@ -1,1 +1,1 @@
-docker compose -f /home/kamil/docker/jellyfin/compose.yml up -d
+docker compose -f compose.yml up -d

@@ -1,1 +1,1 @@
-docker compose -f /home/kamil/docker/heimdall/compose.yml up -d
+docker compose -f compose.yml up -d
