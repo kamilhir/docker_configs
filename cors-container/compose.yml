@@ -1,0 +1,17 @@
+services:
+  cors-container:
+    image: imjacobclark/cors-container
+    container_name: cors
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    networks:
+      - docker-network
+    ports:
+      - 3000:3000
+    restart: unless-stopped
+
+networks:
+  docker-network:
+    external: true

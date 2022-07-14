@@ -1,0 +1,22 @@
+services:
+  nginxpm:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginxpm
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    volumes:
+      - /home/kamil/docker/nginxpm/appdata/data:/data
+      - /home/kamil/docker/nginxpm/appdata/letsencrypt:/etc/letsencrypt
+    networks:
+      - docker-network
+    ports:
+      - 80:80
+      - 81:81
+      - 443:443
+    restart: unless-stopped
+
+networks:
+  docker-network:
+    external: true
