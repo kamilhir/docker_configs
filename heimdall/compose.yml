@@ -9,12 +9,12 @@ services:
       - PGID=1000
       - TZ=Europe/Warsaw
     networks:
-      - nginx_network
+      - docker-network
     ports:
-      - 9000:80
-      - 9001:443
+      - 9010:80
+      - 9011:443
     restart: unless-stopped
 
 networks:
-  nginx_network:
+  docker-network:
     external: true

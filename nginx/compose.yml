@@ -7,16 +7,15 @@ services:
       - PGID=1000
       - TZ=Europe/Warsaw
     volumes:
-      - /home/kamil/docker/nginx/config:/etc/nginx
-      - /home/kamil/docker/nginx/certs:/etc/ssl/private
+      - /home/kamil/docker/nginx/appdata/config:/etc/nginx
+      - /home/kamil/docker/nginx/appdata/certs:/etc/ssl/private
     networks:
-      - nginx_network
+      - docker-network
     ports:
       - 80:80
       - 443:443
     restart: unless-stopped
 
 networks:
-  nginx_network:
-    name: nginx_network
-    driver: bridge
+  docker-network:
+    external: true

@@ -10,11 +10,11 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - /home/kamil/docker/portainer/appdata:/data
     networks:
-      - nginx_network
+      - docker-network
     ports:
-      - 9002:9000
+      - 9000:9000
     restart: unless-stopped
 
 networks:
-  nginx_network:
+  docker-network:
     external: true
