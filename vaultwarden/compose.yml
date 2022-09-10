@@ -1,0 +1,19 @@
+services:
+  vaultwarden:
+    image: vaultwarden/server:latest
+    container_name: vaultwarden
+    volumes:
+      - /home/kamil/docker/vaultwarden/appdata/:/data/
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Europe/Warsaw
+    networks:
+      - docker-network
+    ports:
+      - 9180:80
+    restart: unless-stopped
+
+networks:
+  docker-network:
+    external: true
